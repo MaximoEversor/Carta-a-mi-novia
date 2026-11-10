@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4eee8">
+  <title>Para Jazmin Loreana Miranda ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #fbf7f1;
+      --paper-deep: #f0e6dc;
+      --ink: #55443f;
+      --muted: #927b70;
+      --rose: #b98583;
+      --line: #dfcec2;
+      --white: #fffdf9;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse at 12% 18%, rgba(255,255,255,.9), transparent 38%),
+        radial-gradient(ellipse at 88% 72%, rgba(226,207,195,.45), transparent 40%),
+        linear-gradient(145deg, #eee3d9, #f8f2eb 48%, #eaded4);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      overflow-x: hidden;
+    }
+    .petal-layer {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 3;
+    }
+    .petal {
+      position: absolute;
+      top: -12vh;
+      width: 11px;
+      height: 17px;
+      border-radius: 75% 15% 70% 20%;
+      background: linear-gradient(135deg, #fff 5%, #f5edf0 58%, #e7d8df);
+      opacity: .82;
+      filter: drop-shadow(0 2px 2px rgba(99,75,70,.12));
+      animation: fall linear infinite;
+    }
+    @keyframes fall {
+      0% { transform: translate3d(0,-8vh,0) rotate(0deg); }
+      25% { transform: translate3d(24px,25vh,0) rotate(100deg); }
+      55% { transform: translate3d(-18px,58vh,0) rotate(220deg); }
+      100% { transform: translate3d(28px,112vh,0) rotate(390deg); }
+    }
+    .tree {
+      position: fixed;
+      z-index: 0;
+      pointer-events: none;
+      width: min(47vw, 610px);
+      height: auto;
+      opacity: .20;
+      top: 3%;
+      left: -5%;
+    }
+    .tree.right {
+      left: auto;
+      right: -8%;
+      top: 18%;
+      transform: scaleX(-1) rotate(-4deg);
+      opacity: .15;
+    }
+    .page {
+      position: relative;
+      z-index: 1;
+      width: min(900px, calc(100% - 32px));
+      margin: 58px auto;
+      padding: 0 0 34px;
+    }
+    .cover {
+      position: relative;
+      text-align: center;
+      padding: 58px 28px 48px;
+      border: 1px solid rgba(185,133,131,.42);
+      background: rgba(251,247,241,.78);
+      box-shadow: 0 22px 65px rgba(91,67,57,.12);
+      backdrop-filter: blur(5px);
+      overflow: hidden;
+    }
+    .cover::before, .cover::after {
+      content: "✧";
+      position: absolute;
+      color: #c69d98;
+      font-size: 24px;
+      top: 20px;
+    }
+    .cover::before { left: 24px; }
+    .cover::after { right: 24px; }
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .28em;
+      font-size: 13px;
+    }
+    h1 {
+      margin: 0;
+      color: #795b57;
+      font-family: "Great Vibes", cursive;
+      font-size: clamp(52px, 9vw, 86px);
+      font-weight: 400;
+      line-height: 1.12;
+    }
+    .subtitle {
+      margin: 14px 0 0;
+      font-size: 19px;
+      letter-spacing: .06em;
+      color: var(--muted);
+    }
+    .ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      margin: 24px auto 0;
+      color: var(--rose);
+      font-size: 19px;
+    }
+    .ornament::before, .ornament::after {
+      content: "";
+      width: 62px;
+      height: 1px;
+      background: var(--line);
+    }
+    .letter {
+      position: relative;
+      margin: 26px auto 0;
+      padding: clamp(28px, 6vw, 62px);
+      background: rgba(255,253,249,.91);
+      border: 1px solid rgba(185,133,131,.34);
+      box-shadow: 0 18px 55px rgba(91,67,57,.10);
+    }
+    .letter::before {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(223,206,194,.75);
+      pointer-events: none;
+    }
+    .letter-content { position: relative; z-index: 1; }
+    .salutation {
+      margin: 0 0 25px;
+      color: #986e6c;
+      font-family: "Great Vibes", cursive;
+      font-size: clamp(34px, 6vw, 47px);
+    }
+    .letter p {
+      margin: 0 0 19px;
+      font-size: clamp(18px, 2.35vw, 21px);
+      line-height: 1.72;
+      text-align: left;
+    }
+    .signature {
+      margin-top: 38px;
+      text-align: right;
+      color: #8b6662;
+    }
+    .signature .from {
+      display: block;
+      font-family: "Great Vibes", cursive;
+      font-size: 47px;
+      line-height: 1.1;
+    }
+    .signature .heart {
+      display: block;
+      margin-top: 8px;
+      font-size: 23px;
+      letter-spacing: .2em;
+    }
+    footer {
+      text-align: center;
+      padding: 28px 12px 0;
+      color: #967e74;
+      font-size: 16px;
+      letter-spacing: .08em;
+    }
+    .tree-caption {
+      margin-top: 12px;
+      font-family: "Great Vibes", cursive;
+      font-size: 30px;
+      color: #a17c78;
+      letter-spacing: 0;
+    }
+    @media (max-width: 600px) {
+      .page { width: min(100% - 18px, 900px); margin: 18px auto 28px; }
+      .cover { padding: 45px 16px 35px; }
+      .letter { margin-top: 14px; padding: 27px 23px; }
+      .letter::before { inset: 8px; }
+      .letter p { line-height: 1.62; margin-bottom: 16px; }
+      .tree { width: 75vw; left: -22%; top: 10%; opacity: .13; }
+      .tree.right { right: -25%; top: 40%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .petal { animation: none; display: none; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="petal-layer" aria-hidden="true" id="petals"></div>
+
+  <!-- Silueta decorativa de ramas en flor -->
+  <svg class="tree" viewBox="0 0 500 650" aria-hidden="true">
+    <g fill="none" stroke="#80665c" stroke-width="8" stroke-linecap="round">
+      <path d="M110 650 C150 520 180 420 205 300 C220 220 195 130 145 55"/>
+      <path d="M190 390 C120 340 75 275 52 190"/>
+      <path d="M204 315 C285 270 335 205 354 115"/>
+      <path d="M168 470 C270 430 345 365 395 285"/>
+      <path d="M147 525 C95 485 65 430 48 365"/>
+      <path d="M205 300 C250 220 280 150 270 70"/>
+      <path d="M92 300 C125 280 145 245 151 205"/>
+    </g>
+    <g fill="#fffdfb" stroke="#cdb8b4" stroke-width="2">
+      <g transform="translate(145 55)"><circle r="12" cx="0" cy="-12"/><circle r="12" cx="12" cy="0"/><circle r="12" cx="0" cy="12"/><circle r="12" cx="-12" cy="0"/><circle r="6" fill="#d8b7ad"/></g>
+      <g transform="translate(52 190)"><circle r="11" cx="0" cy="-11"/><circle r="11" cx="11" cy="0"/><circle r="11" cx="0" cy="11"/><circle r="11" cx="-11" cy="0"/><circle r="5" fill="#d8b7ad"/></g>
+      <g transform="translate(354 115)"><circle r="13" cx="0" cy="-13"/><circle r="13" cx="13" cy="0"/><circle r="13" cx="0" cy="13"/><circle r="13" cx="-13" cy="0"/><circle r="6" fill="#d8b7ad"/></g>
+      <g transform="translate(395 285)"><circle r="12" cx="0" cy="-12"/><circle r="12" cx="12" cy="0"/><circle r="12" cy="12"/><circle r="12" cx="-12" cy="0"/><circle r="5" fill="#d8b7ad"/></g>
+      <g transform="translate(48 365)"><circle r="12" cx="0" cy="-12"/><circle r="12" cx="12" cy="0"/><circle r="12" cy="12"/><circle r="12" cx="-12" cy="0"/><circle r="5" fill="#d8b7ad"/></g>
+      <g transform="translate(270 70)"><circle r="12" cx="0" cy="-12"/><circle r="12" cx="12" cy="0"/><circle r="12" cy="12"/><circle r="12" cx="-12" cy="0"/><circle r="5" fill="#d8b7ad"/></g>
+      <g transform="translate(151 205)"><circle r="10" cx="0" cy="-10"/><circle r="10" cx="10" cy="0"/><circle r="10" cy="10"/><circle r="10" cx="-10" cy="0"/><circle r="5" fill="#d8b7ad"/></g>
+    </g>
+  </svg>
+  <svg class="tree right" viewBox="0 0 500 650" aria-hidden="true">
+    <g fill="none" stroke="#80665c" stroke-width="8" stroke-linecap="round">
+      <path d="M110 650 C150 520 180 420 205 300 C220 220 195 130 145 55"/>
+      <path d="M190 390 C120 340 75 275 52 190"/>
+      <path d="M204 315 C285 270 335 205 354 115"/>
+      <path d="M168 470 C270 430 345 365 395 285"/>
+      <path d="M147 525 C95 485 65 430 48 365"/>
+    </g>
+    <g fill="#fffdfb" stroke="#cdb8b4" stroke-width="2">
+      <g transform="translate(145 55)"><circle cy="-12" r="12"/><circle cx="12" r="12"/><circle cy="12" r="12"/><circle cx="-12" r="12"/><circle r="5" fill="#d8b7ad"/></g>
+      <g transform="translate(52 190)"><circle cy="-11" r="11"/><circle cx="11" r="11"/><circle cy="11" r="11"/><circle cx="-11" r="11"/><circle r="5" fill="#d8b7ad"/></g>
+      <g transform="translate(354 115)"><circle cy="-13" r="13"/><circle cx="13" r="13"/><circle cy="13" r="13"/><circle cx="-13" r="13"/><circle r="5" fill="#d8b7ad"/></g>
+      <g transform="translate(395 285)"><circle cy="-12" r="12"/><circle cx="12" r="12"/><circle cy="12" r="12"/><circle cx="-12" r="12"/><circle r="5" fill="#d8b7ad"/></g>
+    </g>
+  </svg>
+
+  <main class="page">
+    <header class="cover">
+      <p class="eyebrow">Una carta escrita con todo mi cariño</p>
+      <h1>Para mi Jazmincita</h1>
+      <p class="subtitle">Jazmin Loreana Miranda</p>
+      <div class="ornament">♡</div>
+    </header>
+
+    <article class="letter">
+      <div class="letter-content">
+        <h2 class="salutation">Mi bella y preciosa Jazmincita ♡</h2>
+
+        <p>No sabes lo mucho que quisiera tenerte ahora mismo enfrente mio, poder mirarte a los ojitos, abrazarte bien fuerte y decirte todo esto mientras te lleno de besitos, pero como por ahora la distancia no nos lo permite, quiero dejarte estas palabritas para que puedas sentir aunque sea un poquito de todo el amor que tengo por ti</p>
+
+        <p>Aveces me pongo a pensar en como comenzó todo esto, quien diria que aquella personita que conocí en Omlet Arcade durante la pandemia, con la que comparti tantas conversaciones y momentos, terminaría convirtiendose en alguien tan importante para mi, pasaron meses en los que perdimos el contacto, volviamos a hablar en vacaciones y de alguna manera la vida siempre nos terminaba juntando otra vez, hasta que llegó aquel 25 de marzo, el dia en que te declaraste y yo tuve la oportunidad de decirte que si, sin imaginar todo lo hermoso que comenzaria desde ese momento, y sinceramente, que suerte tuve de haberte encontrado</p>
+
+        <p>Quiero que sepas que amo absolutamente todo de ti, amo tu carita, tus ojitos, tu sonrisa, tus labios, tu cabello, tu cuerpo entero y cada pequeño detalle que te hace ser tan hermosa, pero no solamente amo como te ves, amo tu forma de ser, tus ocurrencias, tus locuras, tu manera de hablarme, tus gestos y especialmente esa vocecita tan tierna que tienes, no tienes idea de lo feliz que me hace escucharte, podria pasar horas escuchandote hablar de cualquier cosa y seguiria siendo uno de mis momentos favoritos</p>
+
+        <p>Eres una personita demasiado especial para mi, y aunque quizas no siempre sepa como demostrarlo, quiero que tengas presente que no existe un solo dia en el que no agradezca tenerte en mi vida, me haces feliz con un simple mensaje, con una llamada, con una palabra bonita o simplemente con saber que estas ahi, incluso estando tan lejos consigues hacerme sentir cosas que nunca imagine sentir por alguien</p>
+
+        <p>Y quiero confesarte algo, tengo muchisimo miedo de perderte, me asusta pensar que algun dia puedas dejar de sentir lo mismo por mi, que aparezca alguien mas, que te intereses por otra persona o que simplemente llegue un momento en el que ya no quieras seguir con nuestra relacion, me duele incluso imaginarlo, porque realmente no quiero que lo nuestro termine, no quiero convertirme en un recuerdo para ti ni que algun dia dejemos de ser parte de la vida del otro</p>
+
+        <p>Pero mi niña, no quiero que ese miedo se convierta en una preocupacion para ti, no quiero que sientas que tienes que demostrarme constantemente cuanto me amas ni que debas cambiar algo de ti para hacerme feliz, quiero que seas libre de ser tu misma, que estes tranquila y que nunca tengas miedo de contarme lo que sientes, yo quiero amarte de una manera que te haga sentir segura, no de una manera que te haga sentir presionada</p>
+
+        <p>Tampoco quiero que te preocupes por mi, mi bella, quiero que sepas que siempre voy a estar para ti, sin importar la distancia, los dias dificiles o los momentos en los que las cosas no salgan como esperamos, si necesitas hablar te escuchare, si necesitas llorar intentare consolarte y si simplemente necesitas compañia, aqui me tendras, no tienes que estar bien todo el tiempo ni fingir una sonrisa conmigo, quiero acompañarte tanto en tus dias felices como en aquellos en los que todo parece salir mal</p>
+
+        <p>Se que una relacion a distancia no siempre es facil, hay abrazos que tenemos que imaginar, besitos que tenemos que mandar por una pantalla y momentos en los que lo unico que queremos es estar juntitos, pero aun asi, yo te elijo, y quiero seguir eligiendote, porque para mi la distancia no cambia lo que siento por ti, solamente me recuerda lo mucho que deseo poder tenerte entre mis brazos algun dia, mirarte de cerquita y decirte que por fin puedo abrazar a la personita que tanto extrañe</p>
+
+        <p>Quiero que llegue el dia en el que ya no tengamos que despedirnos por una pantalla, en el que pueda acariciarte el cabello, darte besitos en la frente, abrazarte por la espalda y quedarme mirandote mientras sonries, quiero compartir contigo esos pequeños momentos que ahora tanto imaginamos, y cuando finalmente llegue ese dia, espero poder abrazarte tan fuerte que entiendas todo lo que tuve guardado durante tanto tiempo</p>
+
+        <p>Mi esposha, quiero seguir construyendo esta historia contigo, quiero conocer muchisimas mas versiones de ti, acompañarte en tus logros, apoyarte cuando las cosas se compliquen, compartir risas, conversaciones interminables y hasta esas pequeñas tonterias que solamente nosotros entendemos, no espero que seamos una pareja perfecta, solamente quiero que seamos dos personitas que se aman, se respetan, se escuchan y hacen lo posible por cuidarse mutuamente</p>
+
+        <p>Y si algun dia te miras al espejo y no te sientes bonita, recuerda que existe un tontito que te mira y piensa que eres la chica mas hermosa que pudo haber conocido, si alguna vez dudas de ti misma, quiero recordarte lo maravillosa que eres, y si algun dia dudas de cuanto te amo, vuelve a leer estas palabras, porque no necesitas hacer nada especial para merecer mi cariño, no tienes que ser perfecta, simplemente tienes que ser mi Jazmincita, esa personita de la que me enamore y de la que quiero seguir enamorandome cada dia</p>
+
+        <p>Gracias por haberte declarado aquel 25 de marzo, gracias por haber vuelto a mi vida tantas veces y gracias por permitirme ser parte de la tuya, no sabes lo feliz que me hace poder llamarte mi novia, y espero que algun dia podamos mirar hacia atras y recordar todo esto, pensando en lo mucho que tuvimos que esperar para poder estar juntitos</p>
+
+        <p>Te amo muchisimo, mi bella y preciosa Jazmincita, mas de lo que cualquier carta podria explicar, eres una de las razones mas bonitas de mi felicidad y quiero hacer todo lo posible para que tu tambien encuentres felicidad en mi, nunca olvides que aqui tienes a alguien que te ama con todo su corazon, que te admira, que te extraña y que sueña con el dia en que pueda darte todos esos abrazos que por ahora solamente puedo mandarte a traves de una pantalla</p>
+
+        <div class="signature">
+          <span class="from">Max</span>
+          <span class="heart">♡ &nbsp; &lt;3 &nbsp; ^^ &nbsp; :3</span>
+        </div>
+      </div>
+    </article>
+
+    <footer>
+      Hecha con cariño, para alguien muy especial
+      <div class="tree-caption">Hasta que la distancia se convierta en un abrazo ♡</div>
+    </footer>
+  </main>
+
+  <script>
+    // Pocos pétalos para mantener la página ligera
+    const layer = document.getElementById("petals");
+    const total = 17;
+    for (let i = 0; i < total; i++) {
+      const petal = document.createElement("span");
+      petal.className = "petal";
+      petal.style.left = (Math.random() * 100) + "vw";
+      petal.style.animationDuration = (13 + Math.random() * 13) + "s";
+      petal.style.animationDelay = (-Math.random() * 25) + "s";
+      petal.style.opacity = (0.45 + Math.random() * 0.4).toFixed(2);
+      petal.style.transform = "scale(" + (0.65 + Math.random() * 0.65) + ")";
+      layer.appendChild(petal);
+    }
+  </script>
+</body>
+</html>
